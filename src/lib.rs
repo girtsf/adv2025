@@ -74,6 +74,19 @@ impl Pos {
         ]
     }
 
+    pub fn all_neighbors(&self) -> [Pos; 8] {
+        [
+            self + &Pos::new(-1, -1),
+            self + &Pos::new(-1, 0),
+            self + &Pos::new(-1, 1),
+            self + &Pos::new(0, -1),
+            self + &Pos::new(0, 1),
+            self + &Pos::new(1, -1),
+            self + &Pos::new(1, 0),
+            self + &Pos::new(1, 1),
+        ]
+    }
+
     pub fn ccw(&self) -> Self {
         // (0, 1) -> (-1, 0)
         // (-1, 0) -> (0, -1)
